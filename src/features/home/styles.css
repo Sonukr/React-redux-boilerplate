@@ -1,0 +1,22 @@
+.menu ul{
+    list-style: none;
+    margin: 0;
+    background-color: #e3e3e3;
+    display: flex;
+
+}
+
+.menu ul li{ 
+    list-style-image: none;
+    float: left;
+    padding: 12px;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.container {
+    padding: 24px;
+    text-align: center
+}
