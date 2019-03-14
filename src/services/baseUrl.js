@@ -1,10 +1,7 @@
-// @flow
-
 import {
     isApiStubbed
   } from './api/stubSwitch';
   import { isEmpty } from 'lodash/isEmpty';
-  import { FIRST_INDEX, TWO } from '../utilities/constants';
   
   /**
    * Get base url of the application
@@ -16,7 +13,7 @@ import {
    *
    * @returns {string}
    */
-  export function baseUrl (): string {
+  export function baseUrl () {
     if (
       process.env.NODE_ENV === 'development' &&
       !isEmpty(process.env.REACT_APP_BACKEND_SERVER_URL) &&
