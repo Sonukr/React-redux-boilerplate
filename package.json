@@ -15,11 +15,15 @@
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0"
   },
+  "devDependencies": {
+    "flow-bin": "^0.89.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "./node_modules/.bin/flow"
   },
   "eslintConfig": {
     "extends": "react-app"
