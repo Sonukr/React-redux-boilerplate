@@ -13,3 +13,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  - [react-helmet](https://www.npmjs.com/package/react-helmet) - For SEO in react.
  - [lodash](https://www.npmjs.com/package/lodash) - For JS  functions.
 - [Flow](https://www.npmjs.com/package/flow-bin) - For propTypes checking. (just add // @flow  at the top of file to validate) 
+- [Encrypt](https://www.npmjs.com/package/redux-persist-transform-encrypt) - For redux security 
