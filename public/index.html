@@ -26,6 +26,12 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Prevent to access store using console commands -->
+    <script>
+      if(window.__REACT_DEVTOOLS_GLOBAL_HOOK__) {
+        window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () {}
+      }
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
