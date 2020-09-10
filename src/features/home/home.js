@@ -6,6 +6,9 @@ import {
     Switch
 } from 'react-router-dom';
 import './styles.css';
+import { connect } from 'react-redux';
+import { GetData } from '../../actions/getData';
+
 
 const Home = () => (
     <div className='container'>
@@ -69,8 +72,25 @@ const Topics = ({ match }) => (
     </div>
 )
 
-export class HomePage extends Component {
-  render() {
+class HomePageProxy extends Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+          isDropDownOpen: false
+        };
+    }
+
+    componentDidMount(){
+        this.getData();
+        console.log(this.props)
+    }
+
+
+    getData = async() =>{
+        const resp = await(await fetch('https://jsonplaceholder.typicode.com/posts')).json()
+        this.props.dispatch(new GetData(resp).plainAction())
+    }
+    render() {
     return (
         <div className="App">
         <Router>
@@ -88,7 +108,7 @@ export class HomePage extends Component {
                     <Route exact path="/" component={Home}/>
                     <Route path="/about" component={About}/>
                     <Route path="/topics" component={Topics}/>
-               
+                
 
                     <Route path="/" exact component={Home}/>
                 
@@ -99,5 +119,11 @@ export class HomePage extends Component {
         </Router>
     </div>
     )
-  }
+    }
 };
+
+const mapStateToProps = state => ({
+    data: state.data
+});
+
+export const HomePage =  connect(mapStateToProps)(HomePageProxy)
