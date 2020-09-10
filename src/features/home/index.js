@@ -26,10 +26,19 @@ import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web and AsyncStorage for react-native
 import reduxMiddlewares from  '../../middlewares/redux-middleware';
 
+import createEncryptor from 'redux-persist-transform-encrypt';
+
+// Configurations and setup for redux store encryption
+const encryptor = createEncryptor({
+  secretKey: 'sƒdf∂ƒ123240åƒ∆z8**q24%ß∂jfb#23ß∂23q!@#$%^∑&!@#wsdfπ@#@32'
+});
+
+
 // Persist configuration
 const persistConfig = {
     key: 'root',
     storage,
+    transforms: [encryptor]
 }
 // create a persist reducer with existing main reducer.
 const persistedReducer = persistReducer(persistConfig, Reducer)
